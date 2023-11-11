@@ -39,6 +39,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
+import androidx.annotation.Nullable;
+
 import net.pierrox.lightning_launcher.LLApp;
 import net.pierrox.lightning_launcher.configuration.GlobalConfig;
 import net.pierrox.lightning_launcher.engine.LightningEngine;
@@ -53,7 +55,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.concurrent.Semaphore;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
@@ -78,6 +79,7 @@ public class BackupRestoreTool {
     private static final String ZIP_FILE_WALLPAPER_BITMAP = "bitmap.png";
     private static final String ZIP_DIR_FONTS = "fonts";
 
+    @Nullable
     public static Exception backup(BackupConfig backup_config) {
         FileUtils.LL_EXT_DIR.mkdirs();
 
@@ -675,7 +677,7 @@ public class BackupRestoreTool {
         public boolean includeFonts;
         public boolean forTemplate;
         public int statusBarHeight;
-        public ArrayList<Integer> pagesToInclude;
+        public int[] pagesToInclude;
     }
 
     public static class RestoreConfig {

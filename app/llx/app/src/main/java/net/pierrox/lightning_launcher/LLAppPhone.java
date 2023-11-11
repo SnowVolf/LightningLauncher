@@ -36,6 +36,9 @@ import net.pierrox.lightning_launcher.activities.LockScreen;
 import net.pierrox.lightning_launcher.activities.ScriptEditor;
 import net.pierrox.lightning_launcher.api.ScreenIdentity;
 import net.pierrox.lightning_launcher.data.Page;
+import net.pierrox.lightning_launcher.di.BackupRestoreModule;
+import net.pierrox.lightning_launcher.di.DataModule;
+import net.pierrox.lightning_launcher.di.WorkerModule;
 import net.pierrox.lightning_launcher.engine.Screen;
 import net.pierrox.lightning_launcher.overlay.WindowService;
 import net.pierrox.lightning_launcher.prefs.LLPreference;
@@ -45,6 +48,10 @@ import net.pierrox.lightning_launcher.util.MPReceiver;
 
 import org.koin.android.java.KoinAndroidApplication;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public abstract class LLAppPhone extends LLApp {
 
     private MPReceiver mMPReceiver;
@@ -53,11 +60,17 @@ public abstract class LLAppPhone extends LLApp {
     public void onCreate() {
         super.onCreate();
 
+        final var allModules = Stream.of(
+                        DataModule.INSTANCE.getModules(),
+                        WorkerModule.INSTANCE.getModules(),
+                        BackupRestoreModule.INSTANCE.getModules()
+                )
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
         KoinAndroidApplication
                 .create(this)
-                .modules(
-                        // Define vararg of modules...
-                );
+                .modules(allModules);
 
         // Implicit broadcasts cannot be registered anymore in the manifest starting at Android O,
         // however it is still possible to register them at runtime.

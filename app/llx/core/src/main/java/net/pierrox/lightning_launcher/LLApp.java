@@ -35,6 +35,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ru.mintrocket.lib.mintpermissions.ext.ContextExtKt;
+
 public abstract class LLApp extends Application {
     public static final String LL_PKG_NAME = "net.pierrox.lightning_launcher";
     public static final String LLX_PKG_NAME = "net.pierrox.lightning_launcher_extreme";
@@ -81,6 +83,9 @@ public abstract class LLApp extends Application {
         super.onCreate();
 
         sThis = this;
+
+        ContextExtKt.initMintPermissions();
+        ru.mintrocket.lib.mintpermissions.flows.ext.ContextExtKt.initMintPermissionsFlow();
 
         NativeImage.init(this);
 

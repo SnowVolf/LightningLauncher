@@ -48,7 +48,10 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/dx.jar')
     implementation libs.lsvg
+    implementation libs.koin.android
     implementation libs.androidx.appcomat
     implementation libs.androidx.material
+    implementation libs.utils.mintpermissions
+    implementation libs.utils.mintpermissions.flows
     implementation project(':plugin-api')
 }

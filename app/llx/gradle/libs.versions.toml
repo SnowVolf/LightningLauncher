@@ -17,6 +17,12 @@ parceler-compiler = { module = "org.parceler:parceler", version.ref = "parceler_
 androidx-appcomat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
 androidx-material = { module = "com.google.android.material:material", version = "1.9.0" }
 androidx-preference = { module = "androidx.preference:preference", version = "1.2.0" }
+androidx-workmanager = { module = "androidx.work:work-runtime", version = "2.9.0-rc01" }
+
+# ViewBinding Property Delegate
+utils-viewbinding = { module = "com.github.kirich1409:viewbindingpropertydelegate-noreflection", version = "1.5.9" }
+utils-mintpermissions = { module = "com.github.mintrocket.MintPermissions:mintpermissions", version = "1.1.2" }
+utils-mintpermissions-flows = { module = "com.github.mintrocket.MintPermissions:mintpermissions-flows", version = "1.1.2" }
 
 flows = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.7.3" }
 

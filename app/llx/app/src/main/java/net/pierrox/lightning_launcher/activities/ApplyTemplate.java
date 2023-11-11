@@ -92,7 +92,7 @@ import java.util.zip.ZipOutputStream;
 
 public class ApplyTemplate extends ResourceWrapperActivity {
     /*package*/ static final String INTENT_EXTRA_PATH = "p";
-    /*package*/ static final String INTENT_EXTRA_URI = "u";
+    public static final String INTENT_EXTRA_URI = "u";
     private static final int DIALOG_CONFIRM_APPLY = 1;
     private static final int DIALOG_NEED_UPGRADE = 2;
     private static final int DIALOG_WARNING = 3;

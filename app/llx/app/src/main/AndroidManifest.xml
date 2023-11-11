@@ -131,7 +131,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
-            android:name="net.pierrox.lightning_launcher.activities.BackupRestore"
+            android:name="net.pierrox.lightning_launcher.feature.backup.BackupRestore"
             android:excludeFromRecents="true"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true">

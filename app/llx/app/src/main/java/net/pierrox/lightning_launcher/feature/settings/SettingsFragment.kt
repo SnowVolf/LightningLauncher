@@ -12,11 +12,11 @@ import androidx.preference.PreferenceFragmentCompat
 import net.pierrox.lightning_launcher.LLApp
 import net.pierrox.lightning_launcher.Version
 import net.pierrox.lightning_launcher.activities.ApplyTemplate
-import net.pierrox.lightning_launcher.activities.BackupRestore
 import net.pierrox.lightning_launcher.activities.Customize
 import net.pierrox.lightning_launcher.activities.ScreenManager
 import net.pierrox.lightning_launcher.data.ContainerPath
 import net.pierrox.lightning_launcher.data.Page
+import net.pierrox.lightning_launcher.feature.backup.BackupRestore
 import net.pierrox.lightning_launcher.template.LLTemplateAPI
 import net.pierrox.lightning_launcher.util.PhoneUtils
 import net.pierrox.lightning_launcher_extreme.R

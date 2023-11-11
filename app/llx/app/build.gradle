@@ -133,6 +133,7 @@ android {
     }
     buildFeatures {
         aidl true
+        viewBinding true
     }
     namespace 'net.pierrox.lightning_launcher_extreme'
 
@@ -152,7 +153,13 @@ dependencies {
     implementation libs.lsvg
     implementation libs.flows
     implementation libs.koin.android
+
     implementation libs.androidx.appcomat
     implementation libs.androidx.material
     implementation libs.androidx.preference
+    implementation libs.androidx.workmanager
+
+    implementation libs.utils.viewbinding
+    implementation libs.utils.mintpermissions
+    implementation libs.utils.mintpermissions.flows
 }
